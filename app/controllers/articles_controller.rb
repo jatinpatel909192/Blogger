@@ -13,8 +13,6 @@ include ArticlesHelper
   	@article = Article.new
   end
   def create
-  	#@article = Article.new(title: params[:article][:title],body: params[:article][:body])
-    #@article = Article.new(title: params[:article])
     @article = Article.new(article_params)
     @article.save
     flash.notice = "Article '#{@article.title}' Created......"
@@ -33,6 +31,7 @@ include ArticlesHelper
   end
   def update
   	@article = Article.find(params[:id])
+  
   	@article.update(article_params)
 
   	flash.notice = "Article '#{@article.title}' Updated......"
