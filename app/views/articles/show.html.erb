@@ -12,7 +12,9 @@
 	  <%= link_to tag.name, tag_path(tag) %>
 	<% end %>
 
-	
+	<%= image_tag @article.image.url, style: "width:100px;" %>
+
+
 </p>
 
 <h3>Comments (<%= @article.comments.size %>)</h3>
